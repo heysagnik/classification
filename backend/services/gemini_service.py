@@ -14,8 +14,8 @@ logger = logging.getLogger("satellite-backend")
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
 GEMINI_API_BASE = "https://generativelanguage.googleapis.com/v1beta"
-GEMINI_VISION_MODEL = os.getenv("GEMINI_VISION_MODEL", "gemini-1.5-flash")
-GEMINI_TEXT_MODEL = os.getenv("GEMINI_TEXT_MODEL", "gemini-1.5-flash")
+GEMINI_VISION_MODEL = os.getenv("GEMINI_VISION_MODEL", "gemini-2.0-flash")
+GEMINI_TEXT_MODEL = os.getenv("GEMINI_TEXT_MODEL", "gemini-2.0-flash")
 GEMINI_IMAGE_MODEL = os.getenv(
     "GEMINI_IMAGE_MODEL", "gemini-2.0-flash-exp-image-generation"
 )
