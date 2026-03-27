@@ -1,25 +1,26 @@
 from pydantic import BaseModel, Field
 
 
+class Feature(BaseModel):
+    name: str
+    coordinates: list[float] = Field(
+        ...,
+        min_length=4,
+        max_length=4,
+        description="[x, y, width, height]",
+    )
+
+
 class AnalyzeResponse(BaseModel):
-    """Response schema for satellite image analysis pipeline.
-    
-    Contains classification, features, description from Gemini Vision AI,
-    improvement suggestions from Gemini Text AI,
-    and generated enhanced image from Gemini Image Generation.
-    """
     classification: str
-    features: list[str]
+    features: list[Feature]
     description: str
     improvements: list[str]
     generated_image: str = Field(..., description="Base64 encoded generated image")
 
 
 class HealthResponse(BaseModel):
-    """Health check response.
-    
-    ISSUE 3 FIX: Updated to match actual API response.
-    Removed 'model_loaded' field (not applicable to Gemini-only backend).
-    """
     status: str = Field(..., description="API status")
-    gemini_configured: bool = Field(..., description="Whether Gemini API is configured")
+    gemini_vision_configured: bool = Field(..., description="Whether Gemini vision key is configured")
+    gemini_image_configured: bool = Field(..., description="Whether Gemini image key is configured")
+    groq_configured: bool = Field(..., description="Whether Groq API is configured")
