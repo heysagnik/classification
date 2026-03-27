@@ -21,7 +21,7 @@ MAX_FILE_SIZE_BYTES = 15 * 1024 * 1024
 
 
 def allowed_upload_types_message() -> str:
-    return "Unsupported file format. Only JPG, PNG, TIF allowed."
+    return "Unsupported file format. Only JPG/JPEG, PNG, TIF/TIFF allowed."
 
 
 def validate_upload(file: UploadFile, data: bytes, max_size_bytes: int = MAX_FILE_SIZE_BYTES) -> None:
