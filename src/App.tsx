@@ -155,7 +155,7 @@ export default function App() {
         <div className="header-glow" aria-hidden="true" />
         <div className="logo">
           <SatelliteIcon size={22} />
-          <span>Terra<strong>Vision</strong></span>
+          <span>Super<strong>Net</strong></span>
         </div>
         <p className="tagline">AI-powered satellite image intelligence</p>
       </header>
@@ -348,10 +348,7 @@ export default function App() {
       </main>
 
       <footer className="app-footer">
-        Powered by{' '}
-        <a href="https://developer.puter.com" target="_blank" rel="noreferrer">
-          Puter
-        </a>
+        © 2025 SuperNet · AI Satellite Intelligence
       </footer>
     </div>
   )
